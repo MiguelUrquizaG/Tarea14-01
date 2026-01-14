@@ -1,4 +1,11 @@
 package com.salesianostriana.dam.Tarea14_01.dtos.consulta;
 
-public record ConsultaDtoCmd() {
+import java.time.LocalDateTime;
+
+public record ConsultaDtoCmd(
+        String observaciones,
+        String diagnostico,
+        LocalDateTime fecha,
+        Long idCita
+) {
 }

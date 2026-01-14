@@ -1,9 +1,6 @@
 package com.salesianostriana.dam.Tarea14_01.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
@@ -25,6 +22,10 @@ public class Consulta {
     private String observaciones;
     private String diagnostico;
     private LocalDateTime fecha;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cita_id")
+    private Cita cita;
 
     @Override
     public final boolean equals(Object o) {

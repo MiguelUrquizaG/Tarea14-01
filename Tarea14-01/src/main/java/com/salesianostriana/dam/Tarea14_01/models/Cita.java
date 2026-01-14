@@ -21,6 +21,7 @@ public class Cita {
     private Long id;
 
     private LocalDateTime fechaHora;
+    @Enumerated(EnumType.STRING)
     private Estado estado;
 
     @ManyToOne(fetch = FetchType.LAZY)

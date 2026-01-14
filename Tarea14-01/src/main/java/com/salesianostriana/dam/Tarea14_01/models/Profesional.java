@@ -14,6 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@NamedEntityGraph(name = "Profesional.citas", attributeNodes = @NamedAttributeNode("citaSet"))
 public class Profesional {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
