@@ -5,7 +5,9 @@ import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -23,9 +25,9 @@ public class Consulta {
     private String diagnostico;
     private LocalDateTime fecha;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cita_id")
-    private Cita cita;
+    @OneToMany(fetch = FetchType.LAZY)
+    @Builder.Default
+    private Set<Cita> cita = new HashSet<>();
 
     @Override
     public final boolean equals(Object o) {

@@ -3,6 +3,7 @@ package com.salesianostriana.dam.Tarea14_01.services;
 import com.salesianostriana.dam.Tarea14_01.dtos.consulta.ConsultaDtoCmd;
 import com.salesianostriana.dam.Tarea14_01.models.Cita;
 import com.salesianostriana.dam.Tarea14_01.models.Consulta;
+import com.salesianostriana.dam.Tarea14_01.models.Estado;
 import com.salesianostriana.dam.Tarea14_01.repository.CitaRepository;
 import com.salesianostriana.dam.Tarea14_01.repository.ConsultaRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +24,12 @@ public class ConsultaService {
             throw new RuntimeException("No se puede crear una consulta que no exista.");
         }
 
+        if(c.getEstado() != Estado.PROGRAMADA){
+            throw new RuntimeException("No se puede crear una consulta si la cita no está programada.");
+        }
 
-        
+
+
 
         return consultaRepository.save(Consulta.builder()
                 .diagnostico(dto.diagnostico())
