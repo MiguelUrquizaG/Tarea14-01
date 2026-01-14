@@ -18,7 +18,7 @@ public class CitaService {
 
     public Cita crearCita(LocalDateTime fechHora, Estado estado,Long idPaciente,Long idProfesional, Long idConsulta){
         //Profesional profesional =
-        return null
+        return null;
     }
 
 
