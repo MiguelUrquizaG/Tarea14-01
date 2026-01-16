@@ -1,6 +1,6 @@
 package com.salesianostriana.dam.Tarea14_01.services;
 
-import com.salesianostriana.dam.Tarea14_01.dtos.consulta.ConsultaDtoCmd;
+import com.salesianostriana.dam.Tarea14_01.dtos.consulta.CreateConsultaDto;
 import com.salesianostriana.dam.Tarea14_01.models.Cita;
 import com.salesianostriana.dam.Tarea14_01.models.Consulta;
 import com.salesianostriana.dam.Tarea14_01.models.Estado;
@@ -16,26 +16,24 @@ public class ConsultaService {
     private final CitaService citaService;
     private final CitaRepository citaRepository;
 
-    public Consulta registrarConsulta(ConsultaDtoCmd dto){
+    /*public Consulta registrarConsulta(CreateConsultaDto dto) {
 
         Cita c = citaService.getById(dto.idCita());
 
-        if(c == null){
+        if (c == null) {
             throw new RuntimeException("No se puede crear una consulta que no exista.");
         }
 
-        if(c.getEstado() != Estado.PROGRAMADA){
+        if (c.getEstado() != Estado.PROGRAMADA) {
             throw new RuntimeException("No se puede crear una consulta si la cita no está programada.");
         }
 
-
-
-
+        c.setEstado(Estado.ATENDIDA);
         return consultaRepository.save(Consulta.builder()
                 .diagnostico(dto.diagnostico())
                 .observaciones(dto.observaciones())
                 .fecha(dto.fecha())
                 .cita(c)
                 .build());
-    }
+    }*/
 }

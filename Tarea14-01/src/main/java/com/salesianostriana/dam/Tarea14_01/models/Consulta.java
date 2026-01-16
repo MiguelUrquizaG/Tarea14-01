@@ -25,9 +25,8 @@ public class Consulta {
     private String diagnostico;
     private LocalDateTime fecha;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @Builder.Default
-    private Set<Cita> cita = new HashSet<>();
+    @OneToOne(fetch = FetchType.LAZY)
+    private Cita cita ;
 
     @Override
     public final boolean equals(Object o) {

@@ -4,8 +4,10 @@ import com.salesianostriana.dam.Tarea14_01.models.Estado;
 
 import java.time.LocalDateTime;
 
-public record CitaDtoResponse(
-
-
+public record CreateCitaRequest(
+        LocalDateTime fechaHora,
+        Estado estado,
+        Long idPaciente,
+        Long idProfesional
 ) {
 }

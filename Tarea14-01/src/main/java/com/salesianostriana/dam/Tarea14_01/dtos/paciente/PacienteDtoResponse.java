@@ -1,6 +1,6 @@
 package com.salesianostriana.dam.Tarea14_01.dtos.paciente;
 
-import com.salesianostriana.dam.Tarea14_01.dtos.cita.CitaDtoResponse;
+import com.salesianostriana.dam.Tarea14_01.dtos.cita.CitaListDto;
 import com.salesianostriana.dam.Tarea14_01.models.Paciente;
 
 import java.time.LocalDateTime;
@@ -11,17 +11,17 @@ public record PacienteDtoResponse(
         String nombre,
         String email,
         LocalDateTime fechaNacimiento,
-        List<CitaDtoResponse> citaDtoResponseList
+        List<CitaListDto> citaDtoResponseList
 ) {
 
-    public static PacienteDtoResponse of (Paciente paciente){
+    /*public static PacienteDtoResponse of (Paciente paciente){
         return new PacienteDtoResponse(
                 paciente.getId(),
                 paciente.getNombre(),
                 paciente.getEmail(),
                 paciente.getFechaNacimiento(),
-                paciente.getCitaSet().forEach(cita -> CitaDtoResponse::of);
+                //paciente.getCitaSet().forEach(cita -> CitaListDto::of);
         )
-    }
+    }*/
 
 }

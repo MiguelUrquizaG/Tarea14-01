@@ -32,8 +32,7 @@ public class Cita {
     @JoinColumn(name = "profesional_id")
     private Profesional profesional;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "consulta_id")
+    @OneToOne(fetch = FetchType.LAZY)
     private Consulta consulta;
 
     @Override
